@@ -13,7 +13,7 @@ python -m pip install ".[paper]"
 python example.py --plot
 ```
 
-This runs the first replicate of *Sensitivity to functional basis complexity*. It generates 500 donors with 10–200 cells each. Analytic functions specify the effect curves, and a seven-term Fourier expansion generates donor-specific deviations. The joint model estimates the latent cell states and fits the trajectories with five cubic B-spline basis functions. Replicate 1 uses data seed 1001 and sampler seed 100015. The default chain runs for 10,000 iterations and discards the first 5,000.
+This runs the first replicate of *Sensitivity to functional basis complexity*. It generates 500 donors with 10–200 cells each. Analytic functions specify the effect curves, and a seven-term Fourier expansion generates donor-specific deviations. The joint model estimates the latent cell states and fits the trajectories with five cubic B-spline basis functions. The default chain runs for 10,000 iterations and discards the first 5,000.
 
 Open `outputs/example/effects.pdf` to see the mediated, direct and total effect curves with their generating truths, posterior means and pointwise 95% credible intervals. The directory also contains the four observed inputs in `data.json` and curve summaries at 501 grid points in `effects.csv`. The terminal prints the estimates alongside the integrated truths (IME −0.8638, IDE 0.9306, ITE 0.0668) and the root integrated squared error (RISE) of each curve, multiplied by 100. 
 
