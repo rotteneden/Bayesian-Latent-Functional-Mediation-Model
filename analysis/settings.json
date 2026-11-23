@@ -1,0 +1,95 @@
+{
+  "replicates": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "hyperparameters": {
+    "a1": 2.0,
+    "b1": 0.1,
+    "a2": 2.0,
+    "b2": 0.1,
+    "a3": 2.0,
+    "b3": 0.1,
+    "a4": 2.0,
+    "b4": 0.1,
+    "a_a": 10.0,
+    "b_a": 0.1,
+    "a_b": 10.0,
+    "b_b": 0.1
+  },
+  "simulation": {
+    "iterations": 10000,
+    "burnin": 5000,
+    "aux_thin": 20
+  },
+  "finite": {
+    "K": 5,
+    "sample_sizes": [
+      200,
+      500,
+      1000
+    ],
+    "data_base_seed": 20260720,
+    "mcmc_seed_base": 202600
+  },
+  "basis": {
+    "n": 500,
+    "Ks": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "data_seed_base": 1000,
+    "mcmc_seed_base": 100000,
+    "cv_mcmc_seed_base": 2000000,
+    "n_folds": 5,
+    "score_thin": 10,
+    "trace_thin": 10,
+    "fold_seed": 202600
+  },
+  "aggregation": {
+    "n": 1000,
+    "K": 4,
+    "data_base_seed": 2026000,
+    "mcmc_seed_base": 202600,
+    "bootstrap": 2000,
+    "bootstrap_seed_base": 1
+  },
+  "two_stage": {
+    "K": 5,
+    "n": 1000,
+    "seed": 20261107,
+    "mu_alpha_sd": 10.0,
+    "mu_beta_sd": 10.0,
+    "var_alpha_shape": 2.0,
+    "var_alpha_scale": 0.1,
+    "var_beta_shape": 2.0,
+    "var_beta_scale": 0.1
+  },
+  "application": {
+    "Ks": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "iterations": 100000,
+    "burnin": 50000,
+    "aux_thin": 20,
+    "seed": 123,
+    "rho_seed": 1102
+  }
+}

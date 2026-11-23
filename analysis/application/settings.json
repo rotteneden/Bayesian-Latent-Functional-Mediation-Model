@@ -1,0 +1,54 @@
+{
+  "data_json": "../../data/application.json",
+  "posterior_files": {
+    "4": "../../outputs/application/fit_K4/posterior_set.json",
+    "5": "../../outputs/application/fit_K5/posterior_set.json",
+    "6": "../../outputs/application/fit_K6/posterior_set.json",
+    "7": "../../outputs/application/fit_K7/posterior_set.json",
+    "8": "../../outputs/application/fit_K8/posterior_set.json",
+    "9": "../../outputs/application/fit_K9/posterior_set.json"
+  },
+  "output_dir": "../../outputs/application/cv",
+  "candidate_Ks": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "z_offset": 0.0,
+  "assume_same_cell_order": false,
+  "source_index_files": {},
+  "data_keys": {
+    "x": "x",
+    "y": "y",
+    "z": "z",
+    "cell_type": "cell_type",
+    "donor_ids": "donor_ids",
+    "cell_ids": "cell_ids"
+  },
+  "n_folds": 5,
+  "fold_seed": 20260725,
+  "fold_stratification": "donor_cell_type",
+  "iterations": 100000,
+  "burnin": 50000,
+  "score_thin": 100,
+  "trace_thin": 100,
+  "mcmc_seed": 20261003,
+  "hyperparameters": {
+    "a1": 2.0,
+    "b1": 0.1,
+    "a2": 2.0,
+    "b2": 0.1,
+    "a3": 2.0,
+    "b3": 0.1,
+    "a4": 2.0,
+    "b4": 0.1,
+    "a_a": 10.0,
+    "b_a": 0.1,
+    "a_b": 10.0,
+    "b_b": 0.1
+  },
+  "save_scoring_draws": false
+}
