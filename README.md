@@ -1,8 +1,9 @@
 # BLaFM
 
-Bayesian latent functional mediation for donor-grouped single-cell measurements. This repository accompanies *Bayesian Latent Functional Mediation Analysis with Application to Population-Scale Single-Cell Data* by Zehua Li, Yang Ni and Weixuan Zhu.
+Code accompanying *Bayesian Latent Functional Mediation Analysis with Application to Population-Scale Single-Cell Data* by Zehua Li, Yang Ni and Weixuan Zhu.
 
-BLaFM estimates how the mediated, direct and total effects of a unit change in a donor-level exposure vary across a shared latent cell state. A cubic B-spline represents each donor's mediator and outcome trajectories. Cell annotations constrain the state interval, and the joint sampler updates the cell states and donor trajectories together.
+BLaFM estimates how the mediated, direct and total effects of a unit change in a donor-level exposure vary across a shared latent cell state. Cubic B-splines represent the mediator and outcome trajectories. The sampler jointly estimates the trajectories and cell states, with state intervals constrained by cell annotations.
+
 
 ## Run the example at K = 5
 
@@ -24,31 +25,6 @@ python example.py --plot --iterations 200 --burnin 100 --out outputs/example_sho
 ```
 
 For the model and the CSV example alone, install with `python -m pip install .` and run `python example.py`.
-
-## Fit real data
-
-```python
-from blafm import fit, summarize_effects
-
-posterior = fit(x, y, z, cell_type, K=5, iterations=10_000, burnin=5_000, seed=123)
-effects = summarize_effects(posterior)
-print(effects["IME"], effects["IDE"], effects["ITE"])
-```
-
-| Input | Meaning |
-|---|---|
-| `x[i]`, `y[i]` | Mediator and outcome for the same ordered cells of donor `i`. Rows may have different lengths across donors. |
-| `z[i]` | One finite numeric exposure per donor. |
-| `cell_type[i]` | One state label per cell. Label 0 restricts pseudotime to [0, 0.5] and label 1 to [0.5, 1]. |
-| `K` | Total number of cubic basis functions, including boundary basis functions. The minimum is four. |
-
-The command line accepts the same four fields in JSON, with optional donor and cell IDs. For example, after running the example above,
-
-```bash
-python -m blafm outputs/example/data.json --K 5 --iterations 10000 --burnin 5000 --seed 100015 --out outputs/example/fit.npz
-```
-
-`fit.npz` includes the retained draws of `alpha0`, `A`, `beta0`, `B_diag` and `C`, donor coefficient means, cell-state means and the effect summaries. The flat array `t_mean` follows the donor/cell input order. Use `cell_counts` to split it by donor. `ME`, `DE` and `TE` are evaluated on `grid`. Their integrated counterparts are `IME`, `IDE` and `ITE`. Each summary uses the column order `mean, sd, q025, q975`.
 
 ## Paper analyses
 
