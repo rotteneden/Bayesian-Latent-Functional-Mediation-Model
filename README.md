@@ -1,9 +1,11 @@
 # BLaFM
 
-Code accompanying *Bayesian Latent Functional Mediation Analysis with Application to Population-Scale Single-Cell Data* by Zehua Li, Yang Ni and Weixuan Zhu.
+
+Code accompanying the preprint [*Bayesian Latent Functional Mediation Analysis with Application to Population-Scale Single-Cell Data*](https://arxiv.org/abs/2611.33714) by Zehua Li, Yang Ni, and Weixuan Zhu.
+
+**Paper:** [arXiv:2611.33714](https://arxiv.org/abs/2611.33714) · [PDF](https://arxiv.org/pdf/2611.33714)
 
 BLaFM estimates how the mediated, direct and total effects of a unit change in a donor-level exposure vary across a shared latent cell state. Cubic B-splines represent the mediator and outcome trajectories. The sampler jointly estimates the trajectories and cell states, with state intervals constrained by cell annotations.
-
 
 ## Run the example at K = 5
 
